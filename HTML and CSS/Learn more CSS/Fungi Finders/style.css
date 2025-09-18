@@ -83,9 +83,9 @@
     min-height: 10em;
   }
 
-  :target {
+  /* :target {
     scroll-margin-block: 5ex;
-  }
+  } */
 }
 
 @layer base {
@@ -273,6 +273,23 @@
 }
 
 @layer components {
+  .skip-to-main:not(:focus) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  .skip-to-main {
+    position: absolute;
+    background-color: var(--background-accent-main);
+    padding: 1rem;
+    border-radius: var(--border-radius-md);
+  }
+
   .site-header {
     padding-block: 1rem;
   }
