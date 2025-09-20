@@ -9,3 +9,13 @@ navToggle.addEventListener('click', () => {
     navToggle.setAttribute('aria-expanded', 'false');
   }
 });
+
+const resizeObserver = new ResizeObserver((entries) => {
+  entries[0].target.classList.add('resizing');
+
+  requestAnimationFrame(() => {
+    entries[0].target.classList.remove('resizing');
+  });
+});
+
+resizeObserver.observe(document.body);
